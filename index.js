@@ -131,7 +131,7 @@ app.post(
         const { id, nama, nim, kelas } = req.body
 
         const result = await pool.query(
-            'INSERT INTO biodata (id, nama, nim, kelas) VALUES ($1, $2, $3, $4) RETURNING *',
+            `INSERT INTO biodata (id, nama, nim, kelas) VALUES ($1, $2, $3, $4) RETURNING *`,
             [id ?? null, nama, nim, kelas]
         )
 
